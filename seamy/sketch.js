@@ -8,8 +8,8 @@ function preload(){
 
   var screenNum, click;
   function setup() {
-    createCanvas(414, 700);
-    screenNum = 6;
+    createCanvas(414, 896);
+    screenNum = 1;
     click = 0;
     textSize(30);
     fill(0);
@@ -153,14 +153,22 @@ text("$235",100,200);
 }
 }
 
-function mouseClicked()
-{
-  if(mouseX < 414 && mouseX > 0 && mouseY > 0 && mouseY < 700)
-    {
-      screenNum = 2;
-    }
-  else if( mouseX < 380 && mouseX > 100 && mouseY > 420 && mouseY < 480)
-    {
-      screenNum = 3;
-    }
+//Screen touch function
+function touchStarted(){
+  screenNum=3;
 }
+
+
+//Mouse clicked function
+
+// function mouseClicked()
+// {
+//   if(mouseX < 414 && mouseX > 0 && mouseY > 0 && mouseY < 700)
+//     {
+//       screenNum = 2;
+//     }
+//   else if( mouseX < 380 && mouseX > 100 && mouseY > 420 && mouseY < 480)
+//     {
+//       screenNum = 3;
+//     }
+// }
