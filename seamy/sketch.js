@@ -1,8 +1,17 @@
+var x1,y1,x2,y2;
+var xspeed;
 
 function preload(){
   mytext=loadFont('Montserrat/Montserrat-Regular.ttf');
   mytext2=loadFont('Montserrat/Montserrat-Bold.ttf');
   logoimg=loadImage('assets/logo.png');
+  eng=loadImage('assets/american.png');
+  chn=loadImage('assets/chinese.png');
+  esp=loadImage('assets/spanish.png');
+  ind=loadImage('assets/indian.png');
+  ina=loadImage('assets/indo.png');
+  on1=loadImage('assets/on1.png');
+  on2=loadImage('assets/on2.png');
   }
 
 
@@ -12,9 +21,13 @@ function preload(){
     screenNum = 1;
     click = 0;
     textSize(30);
-    fill(0);
-    textFont(mytext);
-  // image(logoimg,150,230,110,150);
+    fill(0,150,80);
+    textFont(mytext2);
+    x1=-100;
+    y1=300;
+    x2=400;
+    y2=380;
+    xspeed=8;
 }
 
 function draw() {
@@ -29,6 +42,7 @@ function draw() {
 }
 else if (screenNum == 2) // choosing language
     {
+      fill(0);
       background(225);
       textSize(18);
       textFont(mytext2);
@@ -37,21 +51,27 @@ else if (screenNum == 2) // choosing language
       textSize(16);
       textFont(mytext);
       text('English',100,200);
+      image(eng,50,180,30,30);
 
       textSize(16);
       text('中文',100,250);
+      image(chn,50,230,30,30);
 
       textSize(16);
-      text('Spanish',100,300);
+      text('Español',100,300);
+      image(esp,50,280,30,30);
 
       textSize(16);
       text('Hindi',100,350);
+      image(ind,50,330,30,30);
 
       textSize(16);
       text('Bahasa',100,400);
+      image(ina,50,380,30,30);
     }
-    else if(screenNum == 3) //onboarding
+    else if(screenNum == 3) //onboarding 1
       {
+    fill(0);
     background(225);
     textSize(18);
     textFont(mytext2);
@@ -60,23 +80,35 @@ else if (screenNum == 2) // choosing language
     textSize(18);
     textFont(mytext2);
     text("Choose skill set",110,200);
+    textSize(14);
+    textFont(mytext);
+    text("Skip",170,550);
 
-      image(logoimg,130,250,110,150);
+    textSize(14);
+    textFont(mytext);
+    text("Next",340,650);
 
-      textSize(14);
-      textFont(mytext);
-      text("Skip",170,550);
+    textSize(14);
+    textFont(mytext);
+    text("Back",30,650);
 
-      textSize(14);
-      textFont(mytext);
-      text("Next",340,650);
+     //image rolling
+     noStroke();
+     fill(230,211,186);
+     circle(x2,y2,150);
+     if(x2>200){
+       x2=x2-xspeed;
+     }
+    image(on1,x1,y1,130,150);
+    if(x1<110){
+      x1=x1+xspeed;
+    }
 
-      textSize(14);
-      textFont(mytext);
-      text("Back",30,650);
+
   }
   else if(screenNum == 4) //onboarding 2
     {
+      fill(0);
   background(225);
   textSize(18);
   textFont(mytext2);
@@ -85,8 +117,6 @@ else if (screenNum == 2) // choosing language
   textSize(18);
   textFont(mytext2);
   text("Rate price",140,200);
-
-    image(logoimg,130,250,110,150);
 
     textSize(14);
     textFont(mytext);
@@ -99,8 +129,18 @@ else if (screenNum == 2) // choosing language
     textSize(14);
     textFont(mytext);
     text("Back",30,650);
+    noStroke();
+    fill(230,211,186);
+    circle(x2,y2,150);
+    if(x2>200){
+      x2=x2-xspeed;
+    }
+   image(on2,x1,y1,130,130);
+   if(x1<110){
+     x1=x1+xspeed;
+   }
 }
-else if(screenNum == 5) //onboarding 2
+else if(screenNum == 5) //onboarding 3
   {
 background(225);
 textSize(18);
@@ -155,7 +195,7 @@ text("$235",100,200);
 
 //Screen touch function
 function touchStarted(){
-  screenNum=3;
+  screenNum=2;
 }
 
 
