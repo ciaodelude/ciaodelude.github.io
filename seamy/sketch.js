@@ -1,4 +1,4 @@
-var x1,y1,x2,y2;
+var x1,y1,x2,y2,y3;
 var xspeed;
 
 function preload(){
@@ -12,8 +12,8 @@ function preload(){
   ina=loadImage('assets/indo.png');
   on1=loadImage('assets/on1.png');
   on2=loadImage('assets/on2.png');
+  on3=loadImage('assets/on3.png');
   }
-
 
   var screenNum, click;
   function setup() {
@@ -27,6 +27,7 @@ function preload(){
     y1=300;
     x2=400;
     y2=380;
+    y3=330;
     xspeed=8;
 }
 
@@ -129,6 +130,8 @@ else if (screenNum == 2) // choosing language
     textSize(14);
     textFont(mytext);
     text("Back",30,650);
+
+//image rolling
     noStroke();
     fill(230,211,186);
     circle(x2,y2,150);
@@ -142,6 +145,7 @@ else if (screenNum == 2) // choosing language
 }
 else if(screenNum == 5) //onboarding 3
   {
+fill(0);
 background(225);
 textSize(18);
 textFont(mytext2);
@@ -150,8 +154,6 @@ text("Step 3",160,150);
 textSize(18);
 textFont(mytext2);
 text("Set up availability",100,200);
-
-  image(logoimg,130,250,110,150);
 
   textSize(14);
   textFont(mytext);
@@ -164,7 +166,19 @@ text("Set up availability",100,200);
   textSize(14);
   textFont(mytext);
   text("Back",30,650);
+
+  //image rolling
+      noStroke();
+      fill(230,211,186);
+      circle(x2,y2,150);
+      if(x2>200){
+        x2=x2-xspeed;
+      }
+     image(on3,x1,y3,60,100);
+     if(x1<170){
+       x1=x1+xspeed;}
 }
+
 else if(screenNum == 6) //dashboard
   {
 background(225);
