@@ -1,22 +1,22 @@
-Menu Item,Portion,Calories,Protein,Total Carbs,Total Fat,Fiber 
-Buttermilk Pancakes,1 each,170,4,33,1.5,1
-Turkey Sausage Links,2 each,100,9,0,7,0
-Breakfast Potatoes,1/2 cup,120,2,19,4.5,2
-Roasted Cauliflower Florets,1/4 cup,15,1,3,0,1
-Oatmeal,4 oz,90,3,16,2,2
-Grits,6 oz,100,2,22,0,1
-Eggs,3 fl oz,130,11,0,9,0
-Egg Whites,3 fl oz,45,10,1,0,0
-Pork Sausage Link,1 each,130,3,0,13,0
-Plain Bagel,1 each,220,9,45,1,1
-Apple Cinammon Scone,1 each,410,4,52,20,1
-Mini Apple Muffin,1 each,150,2,33,2,0
-Mini Maple Pecan Plait Danish,1 each,160,2,14,11,0
-Chopped Spinach,1 ounce,5,1,1,0,1
-Chopped Broccoli,1 ounce,10,1,2,0,1
-Chopped Tomatoes,1 tbsp,0,0,0,0,0
-Diced Onions,1 tbsp,0,0,0,0,0
-Sliced Mushrooms,1 tbsp,0,0,0,0,0
-Shredded Sharp Cheddar Cheese,1 tbsp,60,3,0,4.5,0
-Diced Bacon,1 tbsp,45,3,0,3.5,0
-Cubed Tofu,1/4 portion,50,5,1,3,0
+Menu Item,Portion,Calories,Protein,Total Carbs,Total Fat,Fiber,vegetarian
+Buttermilk Pancakes,1 each,170,4,33,1.5,1,100
+Turkey Sausage Links,2 each,100,9,0,7,0,0
+Breakfast Potatoes,1/2 cup,120,2,19,4.5,2,100
+Roasted Cauliflower Florets,1/4 cup,15,1,3,0,1,100
+Oatmeal,4 oz,90,3,16,2,2,100,100
+Grits,6 oz,100,2,22,0,1,0
+Eggs,3 fl oz,130,11,0,9,0,100
+Egg Whites,3 fl oz,45,10,1,0,0,100
+Pork Sausage Link,1 each,130,3,0,13,0,0
+Plain Bagel,1 each,220,9,45,1,1,100
+Apple Cinammon Scone,1 each,410,4,52,20,1,100
+Mini Apple Muffin,1 each,150,2,33,2,0,100
+Mini Maple Pecan Plait Danish,1 each,160,2,14,11,0,100
+Chopped Spinach,1 ounce,5,1,1,0,1,100
+Chopped Broccoli,1 ounce,10,1,2,0,1,100
+Chopped Tomatoes,1 tbsp,0,0,0,0,0,100
+Diced Onions,1 tbsp,0,0,0,0,0,100
+Sliced Mushrooms,1 tbsp,0,0,0,0,0,100
+Shredded Sharp Cheddar Cheese,1 tbsp,60,3,0,4.5,0,100
+Diced Bacon,1 tbsp,45,3,0,3.5,0,100
+Cubed Tofu,1/4 portion,50,5,1,3,0,100
