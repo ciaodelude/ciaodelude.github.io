@@ -4,6 +4,7 @@ var button;
 var buttonP;
 var buttonF;
 var buttonC;
+var buttonV;
 var venue;
 var calorieGoal;
 var itemsOrdered = []; // this is an array of the calories of each item ordered
@@ -45,22 +46,51 @@ function setup() {
   venue = 'start';
   // noLoop();
 }
-
+function vegetarian() {
+  clear();
+  background(0);
+  stroke(255);
+  line(70, 150, 400, 150);
+  noStroke()
+  image(img, 35, -100, 400, 300);
+  fill(180);
+  textSize(20);
+  text('Breakfast Menu', 160, 110);
+  text('Vegetarian Options ', 150, 165);
+  fill(180);
+  textSize(10);
+  text('(Disclaimer : Data is Serving per portion)', 140, 200);
+  textSize(14);
+  textAlign(LEFT, TOP);
+  for (let s = 0; s < table.getRowCount(); s++) {
+    var name = table.getString(s, 'Menu Item');
+    var carbs = table.getNum(s, 'vegetarian');
+    var x = 600;
+    var y = 50 + (s * 60);
+    var size = map(carbs, 0, 100, 0, 10);
+    var h = 10;
+    noStroke();
+    fill(100, 200, 100);
+    rect(x-15, y+15, size, h);
+    fill(180);
+    text(name, x, y + 15);
+  }
+}
 //Carbs
 function changeCarbs() {
   clear();
   background(0);
   stroke(255);
-  line(70, 220, 400, 220);
+  line(70, 150, 400, 150);
   noStroke()
-  image(img, 35, -30, 400, 300);
+  image(img, 35, -100, 400, 300);
   fill(180);
   textSize(20);
-  text('Breakfast Menu', 160, 200);
-  text('Amount of Carbs', 150, 250);
+  text('Breakfast Menu', 160, 110);
+  text('Amount of Carbs ', 150, 165);
   fill(180);
   textSize(10);
-  text('(Disclaimer : Data is Serving per portion)', 140, 270);
+  text('(Disclaimer : Data is Serving per portion)', 140, 200);
   textSize(14);
   textAlign(LEFT, TOP);
   for (let s = 0; s < table.getRowCount(); s++) {
@@ -84,16 +114,16 @@ function changeCalories() {
   clear();
   background(0);
   stroke(255);
-  line(70, 220, 400, 220);
+  line(70, 150, 400, 150);
   noStroke()
-  image(img, 35, -30, 400, 300);
+  image(img, 35, -100, 400, 300);
   fill(180);
   textSize(20);
-  text('Breakfast Menu', 160, 200);
-  text('Amount of Calories', 150, 250);
+  text('Breakfast Menu', 160, 110);
+  text('Amount of Calories ', 150, 165);
   fill(180);
   textSize(10);
-  text('(Disclaimer : Data is Serving per portion)', 140, 270);
+  text('(Disclaimer : Data is Serving per portion)', 140, 200);
   textSize(14);
   textAlign(LEFT, TOP);
   for (let r = 0; r < table.getRowCount(); r++) {
@@ -117,16 +147,16 @@ function changeProtein() {
   clear();
   background(0);
   stroke(255);
-  line(70, 220, 400, 220);
+  line(70, 150, 400, 150);
   noStroke()
-  image(img, 35, -30, 400, 300);
+  image(img, 35, -100, 400, 300);
   fill(180);
   textSize(20);
-  text('Breakfast Menu', 160, 200);
-  text('Amount of Proteins', 150, 250);
+  text('Breakfast Menu', 160, 110);
+  text('Amount of Proteins ', 150, 165);
   fill(180);
   textSize(10);
-  text('(Disclaimer : Data is Serving per portion)', 140, 270);
+  text('(Disclaimer : Data is Serving per portion)', 140, 200);
   textSize(14);
   textAlign(LEFT, TOP);
   for (let s = 0; s < table.getRowCount(); s++) {
@@ -137,7 +167,7 @@ function changeProtein() {
     var size = map(protein, 0, 200, 0, 1200);
     var h = 10;
     noStroke();
-    fill(0, 200, 0);
+    fill(150, 200, 180);
     rect(x, y, size, h, 40);
     fill(180);
     text(name, x, y + 15);
@@ -148,16 +178,16 @@ function changeFat() {
   clear();
   background(0);
   stroke(255);
-  line(70, 220, 400, 220);
+  line(70, 150, 400, 150);
   noStroke()
-  image(img, 35, -30, 400, 300);
+  image(img, 35, -100, 400, 300);
   fill(180);
   textSize(20);
-  text('Breakfast Menu', 160, 200);
-  text('Amount of Fat', 150, 250);
+  text('Breakfast Menu', 160, 110);
+  text('Amount of Fat ', 150, 165);
   fill(180);
   textSize(10);
-  text('(Disclaimer : Data is Serving per portion)', 140, 270);
+  text('(Disclaimer : Data is Serving per portion)', 140, 200);
   textSize(14);
   textAlign(LEFT, TOP);
   for (let s = 0; s < table.getRowCount(); s++) {
@@ -243,29 +273,33 @@ function draw() {
     buttonC = createButton("Carbs");
     buttonP = createButton("Protein");
     buttonF = createButton("Fat");
+    buttonV = createButton("Vegetarian");
     button.mousePressed(changeCalories);
     buttonP.mousePressed(changeProtein);
     buttonC.mousePressed(changeCarbs);
     buttonF.mousePressed(changeFat);
-    button.position(130, 350);
+    buttonV.mousePressed(vegetarian);
+    button.position(130, 250);
     button.size(200, 50);
-    buttonC.position(130, 450);
+    buttonC.position(130, 350);
     buttonC.size(200, 50);
-    buttonP.position(130, 550);
+    buttonP.position(130, 450);
     buttonP.size(200, 50);
-    buttonF.position(130, 650);
+    buttonF.position(130, 550);
     buttonF.size(200, 50);
+    buttonV.position(130, 650);
+    buttonV.size(200, 50);
     stroke(255);
-    line(70, 220, 400, 220);
+    line(70, 150, 400, 150);
     noStroke()
-    image(img, 35, -30, 400, 300);
+    image(img, 35, -100, 400, 300);
     fill(180);
     textSize(20);
-    text('Breakfast Menu', 160, 200);
-    text('Select Data ', 180, 250);
+    text('Breakfast Menu', 160, 130);
+    text('Select Data ', 180, 180);
     fill(180);
     textSize(10);
-    text('(Disclaimer : Data is Serving per portion)', 140, 270);
+    text('(Disclaimer : Data is Serving per portion)', 140, 200);
     textSize(14);
     textAlign(LEFT, TOP);
   }
